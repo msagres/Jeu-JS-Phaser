@@ -4,12 +4,14 @@ const config = {
     width: 500,
     height: 300,
     type: Phaser.AUTO,
+
     // action
     scene: {
         preload: preload,
         create: create,
         update: update
     },
+
     // window physics
     physics: {
         default: 'arcade',
@@ -25,8 +27,10 @@ const config = {
 
 // phaser framework
 var game = new Phaser.Game(config)
+
 // player image
 let dude
+// key action
 let cursors
 
 
@@ -52,10 +56,7 @@ function update() {
     if (cursors.space.isDown) {
         dude.setVelocity(0, -300)
     }
-    /*
-    else if(cursors.up.isUp && dude.y >=300){
-        dude.setVelocity(0, 0)
-    }*/
+  
     // right key action
     if (cursors.right.isDown) {
         dude.setVelocity(300, 0)
